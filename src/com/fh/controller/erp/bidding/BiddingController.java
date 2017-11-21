@@ -1,4 +1,4 @@
-package com.fh.controller.erp.trade;
+package com.fh.controller.erp.bidding;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fh.controller.base.BaseController;
 import com.fh.entity.Page;
+import com.fh.service.erp.bidding.BiddingManager;
 import com.fh.service.erp.trade.TradeManager;
 import com.fh.util.AppUtil;
 import com.fh.util.Jurisdiction;
@@ -36,12 +37,12 @@ import com.fh.util.PageData;
  * 创建时间：2017-02-19
  */
 @Controller
-@RequestMapping(value="/trade")
-public class TradeController extends BaseController {
+@RequestMapping(value="/bidding")
+public class BiddingController extends BaseController {
 	
-	String menuUrl = "trade/list.do"; //菜单地址(权限用)
-	@Resource(name="tradeService")
-	private TradeManager tradeService;
+	String menuUrl = "bidding/list.do"; //菜单地址(权限用)
+	@Resource(name="biddingService")
+	private BiddingManager biddingService;
 	
 	/**保存
 	 * @param
@@ -56,7 +57,7 @@ public class TradeController extends BaseController {
 		pd = this.getPageData();
 		pd.put("REMARKS_ID", this.get32UUID());	//主键
 		pd.put("USERNAME", Jurisdiction.getUsername());	//用户名
-		tradeService.save(pd);
+		biddingService.save(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
 		return mv;
@@ -72,7 +73,7 @@ public class TradeController extends BaseController {
 		if(!Jurisdiction.buttonJurisdiction(menuUrl, "del")){return;} //校验权限
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		tradeService.delete(pd);
+		biddingService.delete(pd);
 		out.write("success");
 		out.close();
 	}
@@ -88,7 +89,7 @@ public class TradeController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		tradeService.edit(pd);
+		biddingService.edit(pd);
 		mv.addObject("msg","success");
 		mv.setViewName("save_result");
 		return mv;
@@ -111,8 +112,8 @@ public class TradeController extends BaseController {
 		}
 		pd.put("USERNAME", Jurisdiction.getUsername());
 		page.setPd(pd);
-		List<PageData>	varList = tradeService.list(page);	//列出Remarks列表
-		mv.setViewName("erp/trade/trade_list");
+		List<PageData>	varList = biddingService.list(page);	//列出Remarks列表
+		mv.setViewName("erp/bidding/bidding_list");
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
 		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
@@ -128,7 +129,7 @@ public class TradeController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		mv.setViewName("erp/trade/trade_edit");
+		mv.setViewName("erp/bidding/bidding_edit");
 		mv.addObject("msg", "save");
 		mv.addObject("pd", pd);
 		return mv;
@@ -143,8 +144,8 @@ public class TradeController extends BaseController {
 		ModelAndView mv = this.getModelAndView();
 		PageData pd = new PageData();
 		pd = this.getPageData();
-		pd = tradeService.findById(pd);	//根据ID读取
-		mv.setViewName("erp/trade/trade_update");
+		pd = biddingService.findById(pd);	//根据ID读取
+		mv.setViewName("erp/bidding/bidding_update");
 		mv.addObject("msg", "edit");
 		mv.addObject("pd", pd);
 		return mv;
@@ -166,7 +167,7 @@ public class TradeController extends BaseController {
 		String DATA_IDS = pd.getString("DATA_IDS");
 		if(null != DATA_IDS && !"".equals(DATA_IDS)){
 			String ArrayDATA_IDS[] = DATA_IDS.split(",");
-			tradeService.deleteAll(ArrayDATA_IDS);
+			biddingService.deleteAll(ArrayDATA_IDS);
 			pd.put("msg", "ok");
 		}else{
 			pd.put("msg", "no");
@@ -191,7 +192,7 @@ public class TradeController extends BaseController {
 		List<String> titles = new ArrayList<String>();
 		titles.add("备注");	//1
 		dataMap.put("titles", titles);
-		List<PageData> varOList = tradeService.listAll(pd);
+		List<PageData> varOList = biddingService.listAll(pd);
 		List<PageData> varList = new ArrayList<PageData>();
 		for(int i=0;i<varOList.size();i++){
 			PageData vpd = new PageData();

@@ -42,10 +42,10 @@
 										</span>
 									</div>
 								</td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastStart" id="lastStart"  value="${pd.lastStart }" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title="开始日期"/></td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="${pd.lastEnd }" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastStart" id="lastStart"  value="${pd.lastStart }" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;height:34px" placeholder="开始日期" title="开始日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastEnd" name="lastEnd"  value="${pd.lastEnd }" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;height:34px" placeholder="结束日期" title="结束日期"/></td>
 								<c:if test="${QX.cha == 1 }">
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-default btn-sm" onclick="tosearch();"  title="检索">查询</a></td>
 								</c:if>
 <%-- 								<c:if test="${QX.toExcel == 1 }">
 								<td style="vertical-align:top;padding-left:2px;">
@@ -170,11 +170,11 @@
 							<tr>
 								<td style="vertical-align:top;">
 									<c:if test="${QX.add == 1 }">
-									<a class="btn btn-mini btn-success" onclick="add();">新增</a>
+									<a class="btn btn-primary btn-sm" onclick="add();">新增洽谈</a>
 									</c:if>
-									<c:if test="${QX.del == 1 }">
+							<%-- 		<c:if test="${QX.del == 1 }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
-									</c:if>
+									</c:if> --%>
 								</td>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>

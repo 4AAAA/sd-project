@@ -130,10 +130,12 @@
 						<table style="width:100%;">
 							<tr>
 								<td style="vertical-align:top;">
-									<c:if test="${QX.add == 1 }">
+									<c:if test="${liu.liu == 'admin' }">
+									
 									<a class="btn btn-mini btn-success" onclick="add('${pd.CUSTOMER_ID}');">新增</a>
+									
 									</c:if>
-									<c:if test="${QX.del == 1 }">
+									<c:if test="${liu.liu == 'admin' }">
 									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
 									</c:if>
 								</td>

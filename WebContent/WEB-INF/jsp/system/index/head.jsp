@@ -34,22 +34,22 @@
 					<ul class="nav ace-nav">
 
 
-						<li title="即时聊天" class="purple"  onclick="creatw();"><!-- creatw()在 WebRoot\plugins\websocketInstantMsg\websocket.js中 -->
+						<li title="即时聊天" class="purple"  ><!-- creatw()在 WebRoot\plugins\websocketInstantMsg\websocket.js中 -->
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
 								<span class="badge badge-important"></span>
 							</a>
 
-							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+<!-- 							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
 								<li class="dropdown-header">
 									<i class="ace-icon fa fa-bell-o"></i>
 									FH Aadmin 即时通讯
 								</li>
-							</ul>
+							</ul> -->
 						</li>
 						
 
-						<li title="站内信" class="green" onclick="fhsms();" id="fhsmstss"><!-- fhsms()在 WebRoot\static\js\myjs\head.js中 -->
+						<li title="站内信" class="green" id="fhsmstss"><!-- fhsms()在 WebRoot\static\js\myjs\head.js中 -->
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
 								<span class="badge badge-success" id="fhsmsCount"></span>
@@ -61,7 +61,7 @@
 								<span class="badge badge-grey">2</span>
 							</a>
 
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+		<!-- 					<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
 								<li class="dropdown-header">
 									<i class="ace-icon fa fa-check"></i>
 									这只是个图标而已,不是按钮
@@ -72,7 +72,7 @@
 										<i class="ace-icon fa fa-arrow-right"></i>
 									</a>
 								</li>
-							</ul>
+							</ul> -->
 						</li>
 
 						<!-- #section:basics/navbar.user_menu -->
@@ -91,9 +91,9 @@
 								<li>
 									<a onclick="editUserH();" style="cursor:pointer;"><i class="ace-icon fa fa-user"></i>修改资料</a><!-- editUserH()在 WebRoot\static\js\myjs\head.js中 -->
 								</li>
-								<li id="systemset">
-									<a onclick="editSys();" style="cursor:pointer;"><i class="ace-icon fa fa-cog"></i>系统设置</a><!-- editSys()在 WebRoot\static\js\myjs\head.js中 -->
-								</li>
+		<!-- 						<li id="systemset">
+									<a onclick="editSys();" style="cursor:pointer;"><i class="ace-icon fa fa-cog"></i>系统设置</a>editSys()在 WebRoot\static\js\myjs\head.js中
+								</li> -->
 								<li class="divider"></li>
 								<li>
 									<a href="logout"><i class="ace-icon fa fa-power-off"></i>退出登录</a>

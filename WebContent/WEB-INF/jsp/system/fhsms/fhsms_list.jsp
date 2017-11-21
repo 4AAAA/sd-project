@@ -43,8 +43,8 @@
 										</span>
 									</div>
 								</td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginStart" id="lastLoginStart"  value="${pd.lastLoginStart}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="开始日期" title="开始日期"/></td>
-								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginEnd" name="lastLoginEnd"  value="${pd.lastLoginEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;" placeholder="结束日期" title="结束日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginStart" id="lastLoginStart"  value="${pd.lastLoginStart}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;height:34px" placeholder="开始日期" title="开始日期"/></td>
+								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginEnd" name="lastLoginEnd"  value="${pd.lastLoginEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;height:34px" placeholder="结束日期" title="结束日期"/></td>
 								<td style="vertical-align:top;padding-left:2px;">
 								 	<select class="chosen-select form-control" name="STATUS" id="id" data-placeholder="状态" style="vertical-align:top;width: 68px;">
 									<option value="">全部</option>
@@ -53,7 +53,7 @@
 								  	</select>
 								</td>
 								<c:if test="${QX.cha == 1 }">
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-default btn-sm" onclick="tosearch();"  title="检索">查询</a></td>
 								</c:if>
 								<td style="padding-left:20px;"><a href="fhsms/list.do?TYPE=1"><span class="label label-<c:if test="${pd.TYPE != '2' }">success</c:if> arrowed-right arrowed-in">收信箱</span></a></td>
 								<td><a href="fhsms/list.do?TYPE=2"><span class="label label-<c:if test="${pd.TYPE == '2' }">info</c:if> arrowed-right arrowed-in">发信箱</span></a></td>
@@ -172,7 +172,7 @@
 						</table>
 						<div class="page-header position-relative">
 						<table style="width:100%;">
-							<tr>
+<%-- 							<tr>
 								<td style="vertical-align:top;">
 									<c:if test="${QX.FHSMS == 1 }"><a title="批量发送站内信" class="btn btn-mini btn-info" onclick="makeAll('确定要给选中的用户发送站内信吗?');"><i class="ace-icon fa fa-envelope-o bigger-120"></i></a></c:if>
 									<c:if test="${QX.FHSMS == 1 }"><a class="btn btn-mini btn-warning" onclick="sendFhsms('');"><i class="ace-icon fa fa-envelope-o bigger-120"></i></a></c:if>
@@ -181,7 +181,7 @@
 									</c:if>
 								</td>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
-							</tr>
+							</tr> --%>
 						</table>
 						</div>
 						</form>

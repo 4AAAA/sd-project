@@ -27,7 +27,7 @@
 				<div class="page-content">
 					<div class="row">
 						<div class="col-xs-12">
-							<table style="margin-top: 8px;">
+<%-- 							<table style="margin-top: 8px;">
 								<tr height="35">
 									<c:if test="${QX.add == 1 }">
 									<td style="width:69px;"><a href="javascript:addRole(0);" class="btn btn-sm btn-success">新增组</a></td>
@@ -49,7 +49,7 @@
 										</c:choose>
 									<td></td>
 								</tr>
-							</table>
+							</table> --%>
 							
 							<table>
 								<tr height="7px;"><td colspan="100"></td></tr>

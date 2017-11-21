@@ -34,7 +34,7 @@
 
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">洽谈编号:</td>
-								<td><input type="number" name="PHONE" id="PHONE" value="${pd.PHONE}" maxlength="32" placeholder="这里输入洽谈编号" title="手机" style="width:98%;"/></td>
+								<td><input type="number" name="PHONE" id="PHONE" value="${pd.PHONE}" maxlength="32" placeholder="这里输入洽谈编号(必须为数字)" title="手机" style="width:98%;"/></td>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">申请人:</td>

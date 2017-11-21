@@ -136,7 +136,7 @@
 			</form>
 			<div class="controls">
 				<div class="main_input_box">
-					<font color="white"><span id="nameerr">牡丹江龙江电能售电有限公司 版权所有</span></font>
+					<font color="white"><span id="nameerr">中北电力建设安装工程集团有限公司 版权所有</span></font>
 				</div>
 			</div>
 		</div>
@@ -215,7 +215,7 @@
 			</form>
 			<div class="controls">
 				<div class="main_input_box">
-					<font color="white"><span id="nameerr">牡丹江龙江电能售电有限公司 版权所有</span></font>
+					<font color="white"><span id="nameerr">中北电力建设安装工程集团有限公司 版权所有</span></font>
 				</div>
 			</div>
 		</div>

@@ -110,6 +110,10 @@ public class CustomerImgController extends BaseController {
 		mv.addObject("varList", varList);
 		mv.addObject("pd", pd);
 		mv.addObject("QX",Jurisdiction.getHC());	//按钮权限
+		Map<String,String> liuyw = new HashMap<String,String>();
+		liuyw.put("liu", Jurisdiction.getUsername());
+		mv.addObject("liu",liuyw);
+		System.out.println("刘雅威---------------》"+Jurisdiction.getUsername());
 		return mv;
 	}
 	

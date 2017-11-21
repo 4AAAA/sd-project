@@ -31,8 +31,8 @@
 						<div class="col-xs-12">
 							
 						<!-- 检索  -->
-						<form action="remarks/list.do" method="post" name="Form" id="Form">
-						<table style="margin-top:5px;">
+						<form action="bidding/list.do" method="post" name="Form" id="Form">
+<%-- 						<table style="margin-top:5px;">
 							<tr>
 								<td>
 									<div class="nav-search">
@@ -43,10 +43,10 @@
 									</div>
 								</td>
 								<c:if test="${QX.cha == 1 }">
-								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-default btn-sm" onclick="tosearch();"  title="检索">查询</a></td>
+								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
 								</c:if>
 							</tr>
-						</table>
+						</table> --%>
 						<!-- 检索  -->
 					
 						<table id="simple-table" class="table table-striped table-bordered table-hover" style="margin-top:5px;">	
@@ -56,7 +56,22 @@
 									<label class="pos-rel"><input type="checkbox" class="ace" id="zcheckbox" /><span class="lbl"></span></label>
 									</th>
 									<th class="center" style="width:50px;">序号</th>
-									<th class="center">业务类型</th>
+									<th class="center">客户名称</th>
+									<th class="center">套餐名称</th>
+									<th class="center">签约总量</th>
+									<th class="center">项目</th>
+									<th class="center">1月</th>
+									<th class="center">2月</th>
+									<th class="center">3月</th>
+									<th class="center">4月</th>
+									<th class="center">5月</th>
+									<th class="center">6月</th>
+									<th class="center">7月</th>
+									<th class="center">8月</th>
+									<th class="center">9月</th>
+									<th class="center">10月</th>
+									<th class="center">11月</th>
+									<th class="center">12月</th>
 									<th class="center">操作</th>
 								</tr>
 							</thead>
@@ -73,6 +88,21 @@
 											</td>
 											<td class='center' style="width: 30px;">${vs.index+1}</td>
 											<td class='center'>${var.REMARKS}</td>
+											<td class='center'>${var.CONTRACTNAME}</td>
+											<td class='center'>${var.COUNT}</td>
+											<td class='center'>${var.TYPE}</td>
+											<td class='center'>${var.ONE}</td>
+											<td class='center'>${var.TWO}</td>
+											<td class='center'>${var.THREE}</td>
+											<td class='center'>${var.FOUR}</td>
+											<td class='center'>${var.FIVE}</td>
+											<td class='center'>${var.SIX}</td>
+											<td class='center'>${var.SEVEN}</td>
+											<td class='center'>${var.EIGHT}</td>
+											<td class='center'>${var.NINE}</td>
+											<td class='center'>${var.TEN}</td>
+											<td class='center'>${var.ELEVEN}</td>
+											<td class='center'>${var.TWELVE}</td>										
 											<td class="center">
 												<c:if test="${QX.edit != 1 && QX.del != 1 }">
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
@@ -80,7 +110,7 @@
 												<div class="hidden-sm hidden-xs btn-group">
 													<c:if test="${QX.edit == 1 }">
 													<a class="btn btn-xs btn-success" title="编辑" onclick="edit('${var.REMARKS_ID}');">
-														<i class="ace-icon fa fa-pencil-square-o bigger-120" title="编辑"></i>
+														电量分解
 													</a>
 													</c:if>
 													<c:if test="${QX.del == 1 }">
@@ -100,7 +130,7 @@
 															<li>
 																<a style="cursor:pointer;" onclick="edit('${var.REMARKS_ID}');" class="tooltip-success" data-rel="tooltip" title="修改">
 																	<span class="green">
-																		<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																		电量分解
 																	</span>
 																</a>
 															</li>
@@ -143,9 +173,9 @@
 									<c:if test="${QX.add == 1 }">
 									<a class="btn btn-primary btn-sm" onclick="add();">新增</a>
 									</c:if>
-									<c:if test="${QX.del == 1 }">
-									<a class="btn btn-danger btn-sm" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" >批量删除</a>
-									</c:if>
+<%-- 									<c:if test="${QX.del == 1 }">
+									<a class="btn btn-mini btn-danger" onclick="makeAll('确定要删除选中的数据吗?');" title="批量删除" ><i class='ace-icon fa fa-trash-o bigger-120'></i></a>
+									</c:if> --%>
 								</td>
 								<td style="vertical-align:top;"><div class="pagination" style="float: right;padding-top: 0px;margin-top: 0px;">${page.pageStr}</div></td>
 							</tr>
@@ -244,9 +274,9 @@
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="新增";
-			 diag.URL = '<%=basePath%>remarks/goAdd.do';
+			 diag.URL = '<%=basePath%>bidding/goAdd.do';
 			 diag.Width = 450;
-			 diag.Height = 150;
+			 diag.Height = 300;
 			 diag.Modal = true;				//有无遮罩窗口
 			 diag. ShowMaxButton = true;	//最大化按钮
 		     diag.ShowMinButton = true;		//最小化按钮
@@ -268,7 +298,7 @@
 			bootbox.confirm("确定要删除吗?", function(result) {
 				if(result) {
 					top.jzts();
-					var url = "<%=basePath%>remarks/delete.do?REMARKS_ID="+Id+"&tm="+new Date().getTime();
+					var url = "<%=basePath%>bidding/delete.do?REMARKS_ID="+Id+"&tm="+new Date().getTime();
 					$.get(url,function(data){
 						tosearch();
 					});
@@ -282,9 +312,9 @@
 			 var diag = new top.Dialog();
 			 diag.Drag=true;
 			 diag.Title ="编辑";
-			 diag.URL = '<%=basePath%>remarks/goEdit.do?REMARKS_ID='+Id;
-			 diag.Width = 450;
-			 diag.Height = 150;
+			 diag.URL = '<%=basePath%>bidding/goEdit.do?REMARKS_ID='+Id;
+			 diag.Width = 600;
+			 diag.Height = 420;
 			 diag.Modal = true;				//有无遮罩窗口
 			 diag. ShowMaxButton = true;	//最大化按钮
 		     diag.ShowMinButton = true;		//最小化按钮 

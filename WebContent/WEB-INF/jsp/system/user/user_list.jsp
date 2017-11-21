@@ -46,7 +46,7 @@
 								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginStart" id="lastLoginStart"  value="${pd.lastLoginStart}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;height:34px" placeholder="开始日期" title="最近登录开始"/></td>
 								<td style="padding-left:2px;"><input class="span10 date-picker" name="lastLoginEnd" name="lastLoginEnd"  value="${pd.lastLoginEnd}" type="text" data-date-format="yyyy-mm-dd" readonly="readonly" style="width:88px;height:34px" placeholder="结束日期" title="最近登录结束"/></td>
 								<td style="vertical-align:top;padding-left:2px;">
-								 	<select class="chosen-select form-control" name="ROLE_ID" id="role_id" data-placeholder="客户类型" style="vertical-align:top;width: 120px;">
+								 	<select class="chosen-select form-control" name="ROLE_ID" id="role_id" data-placeholder="用户类型" style="vertical-align:top;width: 120px;">
 									<option value=""></option>
 									<option value="">全部</option>
 									<c:forEach items="${roleList}" var="role">
@@ -117,7 +117,14 @@
 												<span class="label label-large label-grey arrowed-in-right arrowed-in"><i class="ace-icon fa fa-lock" title="无权限"></i></span>
 												</c:if>
 												<div class="hidden-sm hidden-xs btn-group">
-<%-- 													<c:if test="${QX.FHSMS == 1 }">
+												
+												<c:if test="${QX.FHSMS == 1 }">
+													<a class="btn btn-xs btn-info" title='发送站内信' onclick="sendFhsms('${user.USERNAME }');">
+														<i class="ace-icon fa fa-envelope-o bigger-120" title="发送站内信"></i>
+													</a>
+												</c:if>
+												
+<%-- 											<c:if test="${QX.FHSMS == 1 }">
 													<a class="btn btn-xs btn-info" title='发送站内信' onclick="sendFhsms('${user.USERNAME }');">
 														<i class="ace-icon fa fa-envelope-o bigger-120" title="发送站内信"></i>
 													</a>

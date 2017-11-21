@@ -67,13 +67,14 @@
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">业务类型:</td>
-								<td>
+								<td style="padding-top: 13px;">${pd.REMARKS1}</td>
+	<%-- 							<td>
 									<select name="REMARKS1" id="REMARKS1" placeholder="请选择" style="width:98%;background-color:#EBEBEB" disabled="disabled" >
 									<c:forEach items="${varList}" var="var">
 										<option value="${var.REMARKS }">${var.REMARKS }</option>
 									</c:forEach>
 									</select>
-								</td>
+								</td> --%>
 							</tr>
 							<tr>
 								<td style="width:75px;text-align: right;padding-top: 13px;">备注:</td>

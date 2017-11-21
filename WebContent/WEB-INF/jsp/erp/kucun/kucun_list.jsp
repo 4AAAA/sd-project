@@ -31,7 +31,7 @@
 						<div class="col-xs-12">
 							
 						<!-- 检索  -->
-						<form action="goods/list.do" method="post" name="Form" id="Form">
+						<form action="kucun/list.do" method="post" name="Form" id="Form">
 						<table style="margin-top:5px;">
 							<tr>
 								<td>
@@ -43,7 +43,7 @@
 									</div>
 								</td>
 								<td style="padding-left:5px">
-									<select class="chosen-select form-control" name="SPBRAND_ID" id="SPBRAND_ID" data-placeholder="请选择品牌" style="vertical-align:top;width:120px;" >
+									<select class="chosen-select form-control" name="SPBRAND_ID" id="SPBRAND_ID" data-placeholder="合同类型" style="vertical-align:top;width:120px;" >
 										<option value=""></option>
 										<c:forEach items="${spbrandList}" var="var">
 											<option value="${var.SPBRAND_ID }" <c:if test="${var.SPBRAND_ID == pd.SPBRAND_ID }">selected</c:if>>${var.NAME }</option>
@@ -51,7 +51,7 @@
 									</select>
 								</td>
 								<td style="padding-left:5px">
-									<select class="chosen-select form-control" name="SPTYPE_ID" id="SPTYPE_ID" data-placeholder="请选择类别" style="vertical-align:top;width:120px;" >
+									<select class="chosen-select form-control" name="SPTYPE_ID" id="SPTYPE_ID" data-placeholder="客户类型" style="vertical-align:top;width:120px;" >
 										<option value=""></option>
 										<c:forEach items="${sptypeList}" var="var">
 											<option value="${var.SPTYPE_ID }" <c:if test="${var.SPTYPE_ID == pd.SPTYPE_ID }">selected</c:if>>${var.NAME }</option>
@@ -59,7 +59,7 @@
 									</select>
 								</td>
 								<c:if test="${QX.cha == 1 }">
-								<td style="vertical-align:top;padding-left:2px"><a class="btn btn-light btn-xs" onclick="tosearch();"  title="检索"><i id="nav-search-icon" class="ace-icon fa fa-search bigger-110 nav-search-icon blue"></i></a></td>
+								<td style="vertical-align:top;padding-left:2px;"><a class="btn btn-default btn-sm" onclick="tosearch();"  title="检索">查询</a></td>
 								</c:if>
 							</tr>
 						</table>
